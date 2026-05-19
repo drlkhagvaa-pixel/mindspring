@@ -35,7 +35,7 @@ export default function PsychSubscription() {
 
   if (confirmed) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: BG }}>
+      <div className="min-h-screen flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-sm border border-stone-100 p-8 max-w-md w-full text-center">
           <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#E8F0EB' }}>
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: G }}>
@@ -58,7 +58,7 @@ export default function PsychSubscription() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: BG }}>
+    <div className="min-h-screen">
       <div className="max-w-xl mx-auto px-4 py-12">
 
         {/* Header */}

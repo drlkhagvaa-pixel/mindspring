@@ -25,7 +25,7 @@ export default function TestResults() {
   const mainRange = findRange(test.ranges, result.totalScore);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: BG }}>
+    <div className="min-h-screen">
       {/* Header */}
       <div className="bg-white border-b border-stone-100 px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">

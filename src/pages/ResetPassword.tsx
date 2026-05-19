@@ -30,7 +30,7 @@ export default function ResetPassword() {
 
   if (isRecovery) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: BG }}>
+      <div className="min-h-screen flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-sm border border-stone-100 p-8 max-w-md w-full text-center">
           <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#E8F0EB' }}>
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: G }}>
@@ -53,7 +53,7 @@ export default function ResetPassword() {
 
   if (done) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: BG }}>
+      <div className="min-h-screen flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-sm border border-stone-100 p-8 max-w-md w-full text-center">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,7 +73,7 @@ export default function ResetPassword() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: BG }}>
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="bg-white rounded-3xl shadow-sm border border-stone-100 p-8">
           <div className="text-center mb-8">

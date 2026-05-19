@@ -9,7 +9,7 @@ export default function PsychPending() {
   const { psychologist, logoutPsychologist, navigate } = useApp();
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: BG }}>
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl shadow-sm border border-stone-100 p-8 max-w-md w-full text-center">
 
         {/* Animated waiting icon */}

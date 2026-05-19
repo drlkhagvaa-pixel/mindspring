@@ -22,7 +22,7 @@ export default function ClientDetail() {
   const completedMap = new Map(activeClient.completedTests.map((r) => [r.testId, r]));
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: BG }}>
+    <div className="min-h-screen">
       {/* Header */}
       <div className="bg-white border-b border-stone-100 px-6 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">

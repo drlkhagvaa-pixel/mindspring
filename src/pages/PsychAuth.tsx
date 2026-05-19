@@ -55,7 +55,7 @@ export default function PsychAuth() {
   const inputCls = 'w-full px-4 py-3 border border-stone-200 rounded-2xl focus:ring-2 outline-none transition text-sm';
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: BG }}>
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <button
           onClick={() => navigate('home')}

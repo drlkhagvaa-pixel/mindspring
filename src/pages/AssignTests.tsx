@@ -31,7 +31,7 @@ export default function AssignTests() {
   const filtered = PSYCHOLOGICAL_TESTS.filter((t) => filterCat === 'Бүгд' || t.category === filterCat);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: BG }}>
+    <div className="min-h-screen">
       {/* Sticky header */}
       <div className="bg-white border-b border-stone-100 px-6 py-4 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
