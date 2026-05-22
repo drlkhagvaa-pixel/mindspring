@@ -65,13 +65,14 @@ export function calculateScore(
       }
       subscaleScores[subscale.id] = sub;
     }
-    const ei = subscaleScores['EI'] ?? 18;
-    const sn = subscaleScores['SN'] ?? 18;
-    const tf = subscaleScores['TF'] ?? 18;
-    const jp = subscaleScores['JP'] ?? 18;
-    // Encode type as 0–15: bit0=I, bit1=N, bit2=F, bit3=P
-    // High subscale score (>18) = first pole (E/S/T/J); low (≤18) = second pole (I/N/F/P)
-    totalScore = (ei <= 18 ? 1 : 0) | (sn <= 18 ? 2 : 0) | (tf <= 18 ? 4 : 0) | (jp <= 18 ? 8 : 0);
+    const ei = subscaleScores['EI'] ?? 45;
+    const sn = subscaleScores['SN'] ?? 45;
+    const tf = subscaleScores['TF'] ?? 45;
+    const jp = subscaleScores['JP'] ?? 45;
+    // Threshold = questions_per_subscale * 3 (neutral midpoint)
+    // High subscale score (>threshold) = first pole (E/S/T/J); low = second pole (I/N/F/P)
+    const mid = (test.subscales?.[0]?.questionIds.length ?? 15) * 3;
+    totalScore = (ei <= mid ? 1 : 0) | (sn <= mid ? 2 : 0) | (tf <= mid ? 4 : 0) | (jp <= mid ? 8 : 0);
   } else {
     // Standard: sum all answers, compute subscales if any
     for (const q of test.questions) {
