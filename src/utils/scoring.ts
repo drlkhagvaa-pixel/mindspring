@@ -52,6 +52,26 @@ export function calculateScore(
       subscaleScores[subscale.id] = sub;
       totalScore += sub;
     }
+  } else if (test.specialScoring === 'mbti') {
+    // MBTI: 4 subscales (EI, SN, TF, JP), 6 questions each (1-5 scale)
+    // E/S/T/J questions: not reversed (high = more of that trait)
+    // I/N/F/P questions: reversed (6-val), so high subscale score = first pole (E/S/T/J)
+    for (const subscale of test.subscales ?? []) {
+      let sub = 0;
+      for (const qid of subscale.questionIds) {
+        const q = test.questions.find((q) => q.id === qid);
+        const val = answerMap.get(qid) ?? 3;
+        sub += q?.reversed ? 6 - val : val;
+      }
+      subscaleScores[subscale.id] = sub;
+    }
+    const ei = subscaleScores['EI'] ?? 18;
+    const sn = subscaleScores['SN'] ?? 18;
+    const tf = subscaleScores['TF'] ?? 18;
+    const jp = subscaleScores['JP'] ?? 18;
+    // Encode type as 0–15: bit0=I, bit1=N, bit2=F, bit3=P
+    // High subscale score (>18) = first pole (E/S/T/J); low (≤18) = second pole (I/N/F/P)
+    totalScore = (ei <= 18 ? 1 : 0) | (sn <= 18 ? 2 : 0) | (tf <= 18 ? 4 : 0) | (jp <= 18 ? 8 : 0);
   } else {
     // Standard: sum all answers, compute subscales if any
     for (const q of test.questions) {
